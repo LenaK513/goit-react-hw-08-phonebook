@@ -11,8 +11,8 @@ export function ContactForm() {
     event.preventDefault();
 
     const form = event.currentTarget;
-    // console.log(form.elements['name'].value);
-
+    console.log(form.elements['name'].value);
+    console.log(form.elements['number'].value);
     dispatch(
       addContact(
         form.elements['name'].value,
