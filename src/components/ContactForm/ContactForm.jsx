@@ -1,38 +1,18 @@
 // import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Btn } from 'components/Button/Button';
 import { addContact } from 'redux/contactsSlice';
 import { FormStyle, Input } from './ContactForm.styled';
 
-export function ContactForm({ onSubmitForApp }) {
-  const getContacts = state => state.contacts;
-  const contactInfo = useSelector(getContacts);
-  console.log(contactInfo);
+export function ContactForm() {
   const dispatch = useDispatch();
-
-  const handleChange = event => {
-    // console.log(event.currentTarget.value.toLowerCase());
-    // const input = event.currentTarget.value.toLowerCase();
-    // switch (name) {
-    //   case 'name':
-    //     setName(value);
-    //     break;
-    //   case 'number':
-    //     setNumber(value);
-    //     break;
-    //   default:
-    //     return;
-    // }
-  };
 
   const handleSubmit = event => {
     event.preventDefault();
-    // onSubmitForApp({ name, number });
 
     const form = event.currentTarget;
-    console.log(form.elements['name'].value);
-    console.log(form.elements['name'].value);
-    console.log(form.elements['number'].value);
+    // console.log(form.elements['name'].value);
+
     dispatch(
       addContact(
         form.elements['name'].value,
@@ -53,7 +33,7 @@ export function ContactForm({ onSubmitForApp }) {
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
         //  value={name}
-        onChange={handleChange}
+        // onChange={handleChange}
         id="1"
       />
       <label htmlFor="2"> Number</label>
@@ -64,7 +44,7 @@ export function ContactForm({ onSubmitForApp }) {
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
         // value={number}
-        onChange={handleChange}
+        // onChange={handleChange}
         id="2"
       />
       <Btn type="submit">Add contact </Btn>
