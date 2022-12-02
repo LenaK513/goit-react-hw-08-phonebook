@@ -33,7 +33,12 @@ export function ContactForm({ onSubmitForApp }) {
     console.log(form.elements['name'].value);
     console.log(form.elements['name'].value);
     console.log(form.elements['number'].value);
-    dispatch(addContact(form.elements['name'].value));
+    dispatch(
+      addContact(
+        form.elements['name'].value,
+        Number(form.elements['number'].value)
+      )
+    );
     form.reset();
   };
 
