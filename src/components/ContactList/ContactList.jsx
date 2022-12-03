@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 export const ContactList = () => {
   const contacts = useSelector(state => state.contacts);
   const dispatch = useDispatch();
-  console.log(contacts);
+
   return (
     <List>
       <h2>Contacts</h2>
