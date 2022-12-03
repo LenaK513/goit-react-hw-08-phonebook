@@ -4,6 +4,7 @@ export const FormStyle = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 20px;
 `;
 
 export const Input = styled.input`
