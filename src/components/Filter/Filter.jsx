@@ -6,9 +6,10 @@ import { InputFilter } from './Filter.styled';
 import { Input } from 'components/ContactForm/ContactForm.styled';
 export const Filter = () => {
   const dispatch = useDispatch();
-
-  const filter = useSelector(state => state.filter.name);
+  const contacts = useSelector(state => state.contacts);
+  const filter = useSelector(state => state.filter.text);
   console.log(filter);
+  console.log(contacts);
 
   // const findNameByFilter = event => {
   //   console.log(event.currentTarget.value);
@@ -17,11 +18,12 @@ export const Filter = () => {
   const handleFilterCheck = event =>
     dispatch(setStatusFilter(event.currentTarget.value));
 
-  // const normalizedFilter = filter.toLowerCase();
+  const normalizedFilter = filter.toLowerCase();
   // const contactsForFilter = contacts.filter(contact =>
   //   contact.name.toLowerCase().includes(normalizedFilter)
   // );
-
+  console.log(filter);
+  console.log(normalizedFilter);
   return (
     <InputFilter>
       Find contacts by name

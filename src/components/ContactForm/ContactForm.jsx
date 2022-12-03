@@ -8,14 +8,23 @@ import { FormStyle, Input } from './ContactForm.styled';
 export function ContactForm() {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts);
-  // console.log(contacts);
 
   const handleSubmit = event => {
     event.preventDefault();
 
     const form = event.currentTarget;
-    // console.log(form.elements['name'].value);
+    console.log(form.elements['name'].value);
     // console.log(form.elements['number'].value);
+    const normalizedName = form.elements['name'].value.toLowerCase();
+    console.log(normalizedName);
+    const compareNames = contacts.find(
+      contactToCompare => contactToCompare.name.toLowerCase() === normalizedName
+    );
+
+    // if (compareNames) {
+    //   alert(`${name} is already in the list of contacts`);
+    //   return;
+    // }
     dispatch(
       addContact(
         form.elements['name'].value,
