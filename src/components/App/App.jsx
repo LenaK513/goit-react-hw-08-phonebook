@@ -1,10 +1,13 @@
-import { ContactForm } from 'components/ContactForm/ContactForm';
-import { Container } from './App.styled';
+import { Route, Routes } from 'react-router-dom';
+
+import { FormPage } from 'pages/FormPage/FormPage';
+import { NotFound } from 'pages/NotFound/NotFound';
+
 export const App = () => {
   return (
-    <Container>
-      <h1>Phonebook</h1>
-      <ContactForm />
-    </Container>
+    <Routes>
+      <Route path="/" element={<FormPage />}></Route>
+      <Route path="*" element={<NotFound />}></Route>
+    </Routes>
   );
 };
