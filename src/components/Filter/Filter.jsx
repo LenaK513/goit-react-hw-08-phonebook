@@ -19,11 +19,12 @@ export const Filter = () => {
     dispatch(setStatusFilter(event.currentTarget.value));
 
   const normalizedFilter = filter.toLowerCase();
-  // const contactsForFilter = contacts.filter(contact =>
-  //   contact.name.toLowerCase().includes(normalizedFilter)
-  // );
+  const contactsForFilter = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(normalizedFilter)
+  );
   console.log(filter);
   console.log(normalizedFilter);
+  console.log(contactsForFilter);
   return (
     <InputFilter>
       Find contacts by name

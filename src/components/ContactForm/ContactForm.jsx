@@ -13,26 +13,21 @@ export function ContactForm() {
     event.preventDefault();
 
     const form = event.currentTarget;
-    console.log(form.elements['name'].value);
-    // console.log(form.elements['number'].value);
-    const normalizedName = form.elements['name'].value.toLowerCase();
+    const formName = form.elements['name'].value;
+    const formNumber = form.elements['number'].value;
+    console.log(formName);
+
+    const normalizedName = formName.toLowerCase();
     console.log(normalizedName);
     const compareNames = contacts.find(
       contactToCompare => contactToCompare.name.toLowerCase() === normalizedName
     );
 
     if (compareNames) {
-      alert(
-        `${form.elements['name'].value} is already in the list of contacts`
-      );
+      alert(`${formName} is already in the list of contacts`);
       return;
     }
-    dispatch(
-      addContact(
-        form.elements['name'].value,
-        Number(form.elements['number'].value)
-      )
-    );
+    dispatch(addContact(formName, Number(formNumber)));
     form.reset();
   };
 
