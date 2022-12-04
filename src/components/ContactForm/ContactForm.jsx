@@ -2,12 +2,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Btn } from 'components/Button/Button';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
+import { getContacts } from 'redux/selectors';
 import { addContact } from 'redux/contactsSlice';
+import PropTypes from 'prop-types';
 import { FormStyle, Input } from './ContactForm.styled';
 
 export function ContactForm() {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts);
+  const contacts = useSelector(getContacts);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -56,8 +58,12 @@ export function ContactForm() {
         <Btn type="submit">Add contact </Btn>
       </FormStyle>
       {(contacts.length > 0 && <ContactList />) ||
-        'There is any contacts in list'}
+        'There is any contact in the list'}
       {contacts.length > 0 && <Filter />}
     </div>
   );
 }
+
+ContactForm.propTypes = {
+  handleSubmit: PropTypes.func,
+};
