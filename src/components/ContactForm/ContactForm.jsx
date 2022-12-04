@@ -21,10 +21,12 @@ export function ContactForm() {
       contactToCompare => contactToCompare.name.toLowerCase() === normalizedName
     );
 
-    // if (compareNames) {
-    //   alert(`${name} is already in the list of contacts`);
-    //   return;
-    // }
+    if (compareNames) {
+      alert(
+        `${form.elements['name'].value} is already in the list of contacts`
+      );
+      return;
+    }
     dispatch(
       addContact(
         form.elements['name'].value,
