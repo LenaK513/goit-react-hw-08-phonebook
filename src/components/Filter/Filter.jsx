@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setStatusFilter } from 'redux/filterSlice';
 // import { getInputFilter } from 'redux/selectors';
 import PropTypes from 'prop-types';
