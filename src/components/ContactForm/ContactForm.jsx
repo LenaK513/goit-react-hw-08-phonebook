@@ -4,20 +4,21 @@ import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import { getContacts } from 'redux/selectors';
 import { addContact } from 'redux/contactsSlice';
-import PropTypes from 'prop-types';
 import { FormStyle, Input } from './ContactForm.styled';
 
 export function ContactForm() {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
+  console.log(contacts);
+  console.log(getContacts);
 
   const handleSubmit = event => {
     event.preventDefault();
 
     const form = event.currentTarget;
     const formName = form.elements['name'].value;
-    const formNumber = form.elements['number'].value;
     console.log(formName);
+    const formNumber = form.elements['number'].value;
 
     const normalizedName = formName.toLowerCase();
     console.log(normalizedName);
@@ -29,6 +30,7 @@ export function ContactForm() {
       alert(`${formName} is already in the list of contacts`);
       return;
     }
+
     dispatch(addContact(formName, Number(formNumber)));
     form.reset();
   };
@@ -63,7 +65,3 @@ export function ContactForm() {
     </div>
   );
 }
-
-ContactForm.propTypes = {
-  handleSubmit: PropTypes.func,
-};
