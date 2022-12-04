@@ -9,18 +9,17 @@ import { FormStyle, Input } from './ContactForm.styled';
 export function ContactForm() {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
-  console.log(contacts);
 
   const handleSubmit = event => {
     event.preventDefault();
 
     const form = event.currentTarget;
     const formName = form.elements['name'].value;
-    console.log(formName);
+
     const formNumber = form.elements['number'].value;
 
     const normalizedName = formName.toLowerCase();
-    console.log(normalizedName);
+
     const compareNames = contacts.find(
       contactToCompare => contactToCompare.name.toLowerCase() === normalizedName
     );
