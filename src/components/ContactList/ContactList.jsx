@@ -13,10 +13,10 @@ export const ContactList = () => {
   const dispatch = useDispatch();
 
   const getContactFromFilter = (contacts, filter) => {
-    const normalizedFilter = filter.toLowerCase();
+    let normalizedFilter = filter?.toLowerCase();
 
     return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter)
+      contact.name?.toLowerCase().includes(normalizedFilter)
     );
   };
 
@@ -25,7 +25,7 @@ export const ContactList = () => {
   return (
     <List>
       <h2>Contacts</h2>
-      {contacts.length > 0 &&
+      {visibleContacts &&
         visibleContacts.map(({ id, name, number }) => (
           <ContactItem
             key={id}

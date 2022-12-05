@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit';
 import { Btn } from 'components/Button/Button';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
@@ -14,22 +15,23 @@ export function ContactForm() {
     event.preventDefault();
 
     const form = event.currentTarget;
-    const formName = form.elements['name'].value;
+    const name = form.elements['name'].value;
 
-    const formNumber = form.elements['number'].value;
+    const number = Number(form.elements['number'].value);
 
-    const normalizedName = formName.toLowerCase();
+    const normalizedName = name.toLowerCase();
 
     const compareNames = contacts.find(
-      contactToCompare => contactToCompare.name.toLowerCase() === normalizedName
+      contactToCompare =>
+        contactToCompare.name?.toLowerCase() === normalizedName
     );
 
     if (compareNames) {
-      alert(`${formName} is already in the list of contacts`);
+      alert(`${name} is already in the list of contacts`);
       return;
     }
 
-    dispatch(addContact(formName, Number(formNumber)));
+    dispatch(addContact({ name, number, id: nanoid() }));
     form.reset();
   };
 
