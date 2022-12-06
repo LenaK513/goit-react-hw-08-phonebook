@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { deleteContact } from 'redux/contactsSlice';
+// import { deleteContact } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/operations';
 import { ContactItem } from 'components/ContactItem/ContactItem';
 import { getContacts, getInputFilter } from 'redux/selectors';
 import { List } from './ContactList.styled';

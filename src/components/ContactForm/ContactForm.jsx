@@ -1,15 +1,23 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { nanoid } from '@reduxjs/toolkit';
+import { useEffect } from 'react';
+// import { nanoid } from '@reduxjs/toolkit';
 import { Btn } from 'components/Button/Button';
+import { getContacts } from 'redux/selectors';
+import { fetchContacts, addContact } from 'redux/operations';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
-import { getContacts } from 'redux/selectors';
-import { addContact } from 'redux/contactsSlice';
+import { getLoading, getError } from 'redux/selectors';
 import { FormStyle, Input } from './ContactForm.styled';
 
 export function ContactForm() {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
+  const isLoading = useSelector(getLoading);
+  const error = useSelector(getError);
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -17,21 +25,21 @@ export function ContactForm() {
     const form = event.currentTarget;
     const name = form.elements['name'].value;
 
-    const number = Number(form.elements['number'].value);
+    const phone = Number(form.elements['number'].value);
 
-    const normalizedName = name.toLowerCase();
+    // const normalizedName = name.toLowerCase();
 
-    const compareNames = contacts.find(
-      contactToCompare =>
-        contactToCompare.name?.toLowerCase() === normalizedName
-    );
+    // const compareNames = contacts?.find(
+    //   contactToCompare =>
+    //     contactToCompare.name?.toLowerCase() === normalizedName
+    // );
 
-    if (compareNames) {
-      alert(`${name} is already in the list of contacts`);
-      return;
-    }
+    // if (compareNames) {
+    //   alert(`${name} is already in the list of contacts`);
+    //   return;
+    // }
 
-    dispatch(addContact({ name, number, id: nanoid() }));
+    dispatch(addContact({ name, phone }));
     form.reset();
   };
 
@@ -58,9 +66,13 @@ export function ContactForm() {
           id="2"
         />
         <Btn type="submit">Add contact </Btn>
+
+        {isLoading && !error && <b>Request in progress...</b>}
       </FormStyle>
+
       {(contacts.length > 0 && <ContactList />) ||
         'There is any contact in the list'}
+
       {contacts.length > 0 && <Filter />}
     </div>
   );
