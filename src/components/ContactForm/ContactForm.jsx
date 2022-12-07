@@ -1,23 +1,13 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-// import { nanoid } from '@reduxjs/toolkit';
+import { useDispatch, useSelector } from 'react-redux';
 import { Btn } from 'components/Button/Button';
 import { getContacts } from 'redux/selectors';
-import { fetchContacts, addContact } from 'redux/operations';
-import { ContactList } from 'components/ContactList/ContactList';
-import { Filter } from 'components/Filter/Filter';
-import { getLoading, getError } from 'redux/selectors';
+import { addContact } from 'redux/operations';
+
 import { FormStyle, Input } from './ContactForm.styled';
 
 export function ContactForm() {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
-  const isLoading = useSelector(getLoading);
-  const error = useSelector(getError);
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -25,19 +15,19 @@ export function ContactForm() {
     const form = event.currentTarget;
     const name = form.elements['name'].value;
 
-    const phone = Number(form.elements['number'].value);
+    const phone = String(form.elements['phone'].value);
 
-    // const normalizedName = name.toLowerCase();
+    const normalizedName = name.toLowerCase();
 
-    // const compareNames = contacts?.find(
-    //   contactToCompare =>
-    //     contactToCompare.name?.toLowerCase() === normalizedName
-    // );
+    const compareNames = contacts?.find(
+      contactToCompare =>
+        contactToCompare.name?.toLowerCase() === normalizedName
+    );
 
-    // if (compareNames) {
-    //   alert(`${name} is already in the list of contacts`);
-    //   return;
-    // }
+    if (compareNames) {
+      alert(`${name} is already in the list of contacts`);
+      return;
+    }
 
     dispatch(addContact({ name, phone }));
     form.reset();
@@ -56,24 +46,17 @@ export function ContactForm() {
           required
           id="1"
         />
-        <label htmlFor="2"> Number</label>
+        <label htmlFor="2">Phone</label>
         <Input
           type="tel"
-          name="number"
+          name="phone"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           id="2"
         />
         <Btn type="submit">Add contact </Btn>
-
-        {isLoading && !error && <b>Request in progress...</b>}
       </FormStyle>
-
-      {(contacts.length > 0 && <ContactList />) ||
-        'There is any contact in the list'}
-
-      {contacts.length > 0 && <Filter />}
     </div>
   );
 }

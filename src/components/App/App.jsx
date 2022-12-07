@@ -1,12 +1,21 @@
-import { Route, Routes } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { ContactForm } from 'components/ContactForm/ContactForm';
+import { ContactList } from 'components/ContactList/ContactList';
+import { Filter } from 'components/Filter/Filter';
+import { getLoading, getError } from 'redux/selectors';
 
-import { FormPage } from 'pages/FormPage/FormPage';
-import { NotFound } from 'pages/NotFound/NotFound';
+import { Container } from 'components/App/App.styled';
+
 export const App = () => {
+  const isLoading = useSelector(getLoading);
+  const error = useSelector(getError);
+
   return (
-    <Routes>
-      <Route path="/" element={<FormPage />}></Route>
-      <Route path="*" element={<NotFound />}></Route>
-    </Routes>
+    <Container>
+      <ContactForm />
+      {isLoading && !error && <b>Request in progress...</b>}
+      <ContactList />
+      <Filter />
+    </Container>
   );
 };
