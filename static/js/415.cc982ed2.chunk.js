@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[415],{415:function(e,n,t){t.r(n),t.d(n,{default:function(){return o}});var r=t(329);function o(){return(0,r.jsxs)("div",{children:[(0,r.jsx)("h2",{children:"Connections API 1.0.0 OAS3"}),"Alexander Repeta - Website Servers"]})}}}]);
+//# sourceMappingURL=415.cc982ed2.chunk.js.map
