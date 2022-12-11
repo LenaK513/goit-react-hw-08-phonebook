@@ -27,11 +27,11 @@ export const RegisterForm = () => {
         </Label>
         <Label>
           Email
-          <input type="email" name="email"></input>
+          <Input type="email" name="email"></Input>
         </Label>
         <Label>
           Password
-          <input type="password" name="password"></input>
+          <Input type="password" name="password"></Input>
         </Label>
         <Btn type="submit">Register</Btn>
       </Form>

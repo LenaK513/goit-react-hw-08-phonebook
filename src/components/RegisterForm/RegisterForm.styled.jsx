@@ -23,11 +23,14 @@ export const Label = styled.label`
 export const Input = styled.input`
   border-radius: 5px;
   height: 20px;
-  border: 1 px solid transparent;
+  margin-top: 5px;
 
-  border:hover,
-  border:focus {
-    color: #f74002;
+  &:hover {
+    border: 1px solid #f74002;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px #f74002;
   }
 `;
 
