@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   margin-left: 20px;
+  display: flex;
+  justify-content: space-evenly;
 `;
 
 export const Title = styled.h2`
@@ -12,7 +14,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   /* align-items: flex-start; */
-  width: 200px;
+  width: 400px;
 `;
 
 export const Label = styled.label`
@@ -42,4 +44,8 @@ export const Btn = styled.button`
   padding: 7px 10px;
   border: transparent;
   border-radius: 5px;
+`;
+
+export const Image = styled.img`
+  width: 40%;
 `;
