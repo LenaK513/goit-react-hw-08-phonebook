@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h2`
   color: #f74002;
+  font-size: 44px;
 `;
 
 export const Form = styled.form`
