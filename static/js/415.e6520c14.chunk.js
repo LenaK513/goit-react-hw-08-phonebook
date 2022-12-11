@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[415],{5415:function(e,t,n){n.r(t),n.d(t,{default:function(){return o}});var r=n(470),i=n(3329);function o(){return(0,i.jsxs)("div",{children:[(0,i.jsx)("img",{src:"../images/rabbit.jpg",alt:""}),(0,i.jsx)(r.j3,{})]})}}}]);
+//# sourceMappingURL=415.e6520c14.chunk.js.map
