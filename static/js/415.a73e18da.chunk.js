@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[415],{415:function(n,e,o){o.r(e),o.d(e,{default:function(){return c}});var t=o(329);function c(){return(0,t.jsx)("div",{children:(0,t.jsx)("h2",{children:"Connections API 1.0.0 OAS3"})})}}}]);
+//# sourceMappingURL=415.a73e18da.chunk.js.map

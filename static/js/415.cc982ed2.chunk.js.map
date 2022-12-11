@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/415.cc982ed2.chunk.js","mappings":"sMAAe,SAASA,IACtB,OACE,4BACE,uDADF,uCAKH,C","sources":["pages/Home.jsx"],"sourcesContent":["export default function Home() {\n  return (\n    <div>\n      <h2>Connections API 1.0.0 OAS3</h2>\n      Alexander Repeta - Website Servers\n    </div>\n  );\n}\n"],"names":["Home"],"sourceRoot":""}
