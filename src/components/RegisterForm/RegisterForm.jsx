@@ -28,7 +28,7 @@ export const RegisterForm = () => {
   return (
     <Wrapper>
       <div>
-        <Title>Registration</Title>
+        <Title>Let's go! Registration is right here!</Title>
         <Form onSubmit={handleSubmit} autoComplete="off">
           <Label>
             UserName
