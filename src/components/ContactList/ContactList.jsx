@@ -2,22 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
-import { deleteContact } from 'redux/operations';
+import { fetchContacts } from 'redux/contacts/operations';
+import { deleteContact } from 'redux/contacts/operations';
 import { ContactItem } from 'components/ContactItem/ContactItem';
-import { getContacts, getInputFilter } from 'redux/selectors';
+import { selectContacts, selectInputFilter } from 'redux/contacts/selectors';
 import { List } from './ContactList.styled';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   console.log(contacts);
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  const filter = useSelector(getInputFilter);
+  const filter = useSelector(selectInputFilter);
 
   const getContactFromFilter = (contacts, filter) => {
     let normalizedFilter = filter?.toLowerCase();
