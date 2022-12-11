@@ -11,7 +11,8 @@ export const Title = styled.h2`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  /* align-items: flex-start; */
+  width: 200px;
 `;
 
 export const Label = styled.label`
