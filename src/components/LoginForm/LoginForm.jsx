@@ -14,14 +14,18 @@ export const LoginForm = () => {
     );
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} autoComplete="on">
       <label>
         Email
-        <input type="email" name="email"></input>
+        <input type="email" name="email" autoComplete="current-email"></input>
       </label>
       <label>
         Password
-        <input type="password" name="password"></input>
+        <input
+          type="password"
+          name="password"
+          autoComplete="current-password"
+        ></input>
       </label>
       <button type="submit">Log In</button>
     </form>
