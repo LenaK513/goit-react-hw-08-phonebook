@@ -1,3 +1,10 @@
+import { Outlet } from 'react-router-dom';
+
 export default function Home() {
-  return <img src="images/rabbit.jpg" alt="" />;
+  return (
+    <div>
+      <img src="../images/rabbit.jpg" alt="" />
+      <Outlet />
+    </div>
+  );
 }
