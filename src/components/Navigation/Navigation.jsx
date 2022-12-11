@@ -1,12 +1,12 @@
-import { NavLink } from 'react-router-dom';
+import { NavItemStyled } from './Navigation.styled';
 import { useAuth } from 'hooks';
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
   return (
     <nav>
-      <NavLink to="/">Home</NavLink>
-      {isLoggedIn && <NavLink to="/contacts">Tasks</NavLink>}
+      <NavItemStyled to="/">Home</NavItemStyled>
+      {isLoggedIn && <NavItemStyled to="/contacts">Tasks</NavItemStyled>}
     </nav>
   );
 };
