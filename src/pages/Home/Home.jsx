@@ -1,10 +1,10 @@
 // import { Outlet } from 'react-router-dom';
-import { Image } from './Home.styled';
+import { Wrapper, Image, Title } from './Home.styled';
 export default function Home() {
   return (
-    <div>
-      <p>WELCOME!</p>
+    <Wrapper>
+      <Title>WELCOME, BUDDY!</Title>
       <Image src={require('images/rabbit.jpg')} alt="" />
-    </div>
+    </Wrapper>
   );
 }
