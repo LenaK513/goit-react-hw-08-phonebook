@@ -16,6 +16,10 @@ export const RegisterForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.currentTarget;
+    console.log(form.elements.name.value);
+    console.log(form.elements.email.value);
+    console.log(form.elements.password.value);
+
     dispatch(
       register({
         name: form.elements.name.value,
@@ -25,6 +29,7 @@ export const RegisterForm = () => {
     );
     form.reset();
   };
+
   return (
     <Wrapper>
       <div>
@@ -32,15 +37,15 @@ export const RegisterForm = () => {
         <Form onSubmit={handleSubmit} autoComplete="off">
           <Label>
             UserName
-            <Input type="text" name="name"></Input>
+            <Input type="text" name="name" autoComplete="off"></Input>
           </Label>
           <Label>
             Email
-            <Input type="email" name="email"></Input>
+            <Input type="email" name="email" autoComplete="off"></Input>
           </Label>
           <Label>
             Password
-            <Input type="password" name="password"></Input>
+            <Input type="password" name="password" autoComplete="off"></Input>
           </Label>
           <Btn type="submit">Register</Btn>
         </Form>
