@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
+  margin-top: 20px;
   margin-left: 20px;
   display: flex;
   justify-content: space-evenly;
@@ -49,4 +50,6 @@ export const Btn = styled.button`
 
 export const Image = styled.img`
   width: 40%;
+  margin-left: 40px;
+  border-radius: 20px;
 `;
