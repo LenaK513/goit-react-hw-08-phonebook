@@ -38,7 +38,7 @@ export const ContactList = () => {
             key={id}
             id={id}
             name={name}
-            phone={number}
+            number={number}
             onDeleteContact={() => dispatch(deleteContact(id))}
           ></ContactItem>
         ))}
