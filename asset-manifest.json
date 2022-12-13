@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.d10f4ba8.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.3e2d5bd8.js",
     "static/js/485.1e37ff1c.chunk.js": "/goit-react-hw-08-phonebook/static/js/485.1e37ff1c.chunk.js",
     "static/js/427.aeb80f1b.chunk.js": "/goit-react-hw-08-phonebook/static/js/427.aeb80f1b.chunk.js",
     "static/js/284.c03f84b0.chunk.js": "/goit-react-hw-08-phonebook/static/js/284.c03f84b0.chunk.js",
-    "static/js/754.210dfaf4.chunk.js": "/goit-react-hw-08-phonebook/static/js/754.210dfaf4.chunk.js",
+    "static/js/754.7ee87cc6.chunk.js": "/goit-react-hw-08-phonebook/static/js/754.7ee87cc6.chunk.js",
     "static/media/rabbit.jpg": "/goit-react-hw-08-phonebook/static/media/rabbit.dcb15a7bac4e844118ac.jpg",
     "static/media/14_3.jpg": "/goit-react-hw-08-phonebook/static/media/14_3.20585139213f53b51b28.jpg",
     "static/media/sugar.jpg": "/goit-react-hw-08-phonebook/static/media/sugar.9ae41565a7e15035a14e.jpg",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.7acaea2f.css.map": "/goit-react-hw-08-phonebook/static/css/main.7acaea2f.css.map",
-    "main.d10f4ba8.js.map": "/goit-react-hw-08-phonebook/static/js/main.d10f4ba8.js.map",
+    "main.3e2d5bd8.js.map": "/goit-react-hw-08-phonebook/static/js/main.3e2d5bd8.js.map",
     "485.1e37ff1c.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/485.1e37ff1c.chunk.js.map",
     "427.aeb80f1b.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/427.aeb80f1b.chunk.js.map",
     "284.c03f84b0.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/284.c03f84b0.chunk.js.map",
-    "754.210dfaf4.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/754.210dfaf4.chunk.js.map"
+    "754.7ee87cc6.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/754.7ee87cc6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.d10f4ba8.js"
+    "static/js/main.3e2d5bd8.js"
   ]
 }
