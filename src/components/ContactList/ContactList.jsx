@@ -33,12 +33,12 @@ export const ContactList = () => {
     <List>
       <h2>Contacts</h2>
       {visibleContacts.length > 0 &&
-        visibleContacts.map(({ id, name, phone }) => (
+        visibleContacts.map(({ id, name, number }) => (
           <ContactItem
             key={id}
             id={id}
             name={name}
-            phone={phone}
+            phone={number}
             onDeleteContact={() => dispatch(deleteContact(id))}
           ></ContactItem>
         ))}
