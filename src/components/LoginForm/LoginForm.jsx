@@ -1,5 +1,7 @@
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { logIn } from 'redux/auth/operations';
+
 import {
   Wrapper,
   Title,
@@ -12,6 +14,7 @@ import {
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
+
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -23,6 +26,7 @@ export const LoginForm = () => {
     );
     form.reset();
   };
+
   return (
     <Wrapper>
       <Image src={require('images/14_3.jpg')} alt="" />
@@ -42,4 +46,8 @@ export const LoginForm = () => {
       </div>
     </Wrapper>
   );
+};
+
+LoginForm.propTypes = {
+  handleSubmit: PropTypes.func,
 };

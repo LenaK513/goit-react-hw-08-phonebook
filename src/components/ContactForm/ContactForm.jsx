@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Btn } from 'components/Button/Button';
 import { selectContacts } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/operations';
-
+import PropTypes from 'prop-types';
 import { FormStyle, Input } from './ContactForm.styled';
 
 export function ContactForm() {
@@ -60,3 +60,7 @@ export function ContactForm() {
     </div>
   );
 }
+
+ContactForm.propTypes = {
+  handleSubmit: PropTypes.func,
+};

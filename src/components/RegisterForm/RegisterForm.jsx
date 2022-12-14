@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
+import PropTypes from 'prop-types';
 import {
   Wrapper,
   Title,
@@ -16,9 +17,6 @@ export const RegisterForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.currentTarget;
-    console.log(form.elements.name.value);
-    console.log(form.elements.email.value);
-    console.log(form.elements.password.value);
 
     dispatch(
       register({
@@ -27,7 +25,7 @@ export const RegisterForm = () => {
         password: form.elements.password.value,
       })
     );
-    console.log(register);
+
     form.reset();
   };
 
@@ -55,4 +53,8 @@ export const RegisterForm = () => {
       <Image src={require('images/sugar.jpg')} alt="" />
     </Wrapper>
   );
+};
+
+RegisterForm.propTypes = {
+  handleSubmit: PropTypes.func,
 };
