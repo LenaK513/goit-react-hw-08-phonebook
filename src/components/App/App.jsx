@@ -20,7 +20,9 @@ export const App = () => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
+  return isRefreshing ? (
+    <p> Refreshing user...</p>
+  ) : (
     <Routes>
       <Route path="/" element={<Container />}>
         <Route index element={<HomePage />} />
